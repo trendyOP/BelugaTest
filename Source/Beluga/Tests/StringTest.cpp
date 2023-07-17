@@ -88,11 +88,13 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(FBelugaArrayTest, "Beluga.Array", EAutomationTe
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FBelugaStringTest, "Beluga.String", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::EngineFilter)
 bool FBelugaArrayTest::RunTest(const FString& Parameters)
 {
-	TArray<int32> IntArray;
-	IntArray.Init(10, 3);
+	TArray<FString> StrArray;
+	StrArray.Add(TEXT("Hello"));
+	StrArray.Emplace(TEXT("World"));
+	FString Arr[] = { TEXT("of"), TEXT("Tomorrow") };
 	FString Elem1 = StrArray[0];
-	FString Elem2 = StrArray[2];
-	TestTrue(TEXT("앞뒤가 같은 숫자인가 1"), Elem1 != Elem2);
-	TestFalse(TEXT("앞뒤가 같은 숫자인가 2"), Elem1 != Elem2);
+	FString Elem2 = StrArray[1];
+	TestTrue(TEXT("같음? 1"), Elem1 == Elem2);
+	TestFalse(TEXT("같음? 2"), Elem1 == Elem2);
 
 }
