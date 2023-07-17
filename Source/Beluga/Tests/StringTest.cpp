@@ -79,7 +79,7 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(FBelugaTextTest, "Beluga.Text", EAutomationTest
 bool FBelugaTextTest::RunTest(const FString& Parameters)
 {
 #define LOCTEXT_NAMESPACE "MyNameSpace"
-	FText constFTextHelloworld = NSLOCTEXT("MyOtherNameSpace", "HelloWorld", "Hello World!");
+	const FText Helloworld = NSLOCTEXT("MyOtherNameSpace", "HelloWorld", "Hello World!");
 	const FText GoodbyeWorld = LOCTEXT("GoodbyeWorld", "Goodbye World!");
 #undef LOCTEXT_NAMESPACE
 }
